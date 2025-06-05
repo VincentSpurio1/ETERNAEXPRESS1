@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ETERNA EXPRESS - Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+
+<script>
+  console.log('isLoggedIn:', localStorage.getItem('isLoggedIn'));
+  if (localStorage.getItem('isLoggedIn') !== 'true') {
+    console.warn('Utente non loggato, reindirizzo a login');
+    window.location.href = 'login.html';
+  } else {
+    console.log('Utente loggato correttamente');
+  }
+</script>
+
+</head>
+
+<body>
+
+
+  <div class="logo-fixed">
+    <img src="logo1.png" alt="Logo ETERNA EXPRESS" />
+  </div>
+
+  <a href="index.html" class="logo-fixed" aria-label="Home">
+    <img src="logo1.png" alt="Logo ETERNA EXPRESS" />
+  </a>
+
+  <p class="welcome-msg">Benvenuto, <span id="utente-email"></span>!</p>
+
+<nav class="dropdown-nav" role="navigation" aria-label="Menu principale">
+  <div class="dropdown">
+    <button class="dropbtn" id="menu-toggle" aria-haspopup="true" aria-expanded="false">☰ Menu</button>
+    <div class="dropdown-content" id="dropdown-menu" role="menu">
+      <a href="#invest" role="menuitem">Contatti</a>
+      <a href="#base" role="menuitem">BASE plan</a>
+      <a href="#platino" role="menuitem">PLATINO plan</a>
+      <a href="#oro" role="menuitem">ORO plan</a>
+      <a href="#" id="dropdown-logout" role="menuitem">Logout</a>
+    </div>
+  </div>
+</nav>
+
+
+  <header id="main-header" role="banner">
+  <h1>
+    ETERNA
+    <span class="logo-inline">
+      <img src="logo1.png" alt="Logo Eterna" />
+    </span>
+    EXPRESS
+  </h1>
+  <p class="subtitle">La carta che sa dove sei</p>
+  
+
+    <div class="carte-container">
+      <input type="radio" id="base" name="piano" hidden />
+      <label for="base" class="carta-box">
+        <img src="carta.png" alt="Carta Base" class="carta" />
+        <p class="titolo-carta">BASE</p>
+        <button class="btn-info" onclick="openModal('modal-base')" type="button">Info</button>
+      </label>
+
+      <input type="radio" id="platino" name="piano" hidden />
+      <label for="platino" class="carta-box">
+        <img src="carta3.png" alt="Carta Platino" class="carta" />
+        <p class="titolo-carta">PLATINO</p>
+        <button class="btn-info" onclick="openModal('modal-platino')" type="button">Info</button>
+      </label>
+
+      <input type="radio" id="oro" name="piano" hidden />
+      <label for="oro" class="carta-box">
+        <img src="carta4.png" alt="Carta Oro" class="carta" />
+        <p class="titolo-carta">ORO</p>
+        <button class="btn-info" onclick="openModal('modal-oro')" type="button">Info</button>
+      </label>
+    </div>
+
+        
+  </main>
+  
+  <a href="#invest" class="cta-button" role="button" aria-label="Vai alla sezione Investi Ora">SEND A QUEST</a>
+  <!-- Pulsante contatti fisso in basso a destra -->
+  <a href="#invest" id="contact-button" aria-label="Vai alla sezione Contatti">📩</a>
+
+  </header>
+
+  <main>
+
+    <section id="advantages" class="zoom-section" tabindex="0" aria-labelledby="advantages-title">
+      <h2 id="advantages-title">Vantaggi Innovativi di ETERNA EXPRESS</h2>
+      <div class="advantages-container">
+        <div class="advantage-card">
+          <span class="icon">📍</span>
+          <p>Tracciamento GPS ultra-preciso integrato nella SmartCard, per una localizzazione in tempo reale affidabile e senza ritardi.</p>
+        </div>
+        <div class="advantage-card">
+          <span class="icon">🔒</span>
+          <p>Sicurezza avanzata: blocco remoto immediato, notifiche di tentativi di frode e protezione dei dati personali.</p>
+        </div>
+        <div class="advantage-card">
+          <span class="icon">📱</span>
+          <p>Integrazione seamless con wallet digitali e app mobile, per gestire la carta ovunque e in modo semplice.</p>
+        </div>
+        <div class="advantage-card">
+          <span class="icon">💳</span>
+          <p>Design elegante e minimalista, con materiali premium, per garantire sia funzionalità che stile.</p>
+        </div>
+        <div class="advantage-card">
+          <span class="icon">⚡</span>
+          <p>Attivazione immediata e gestione intuitiva tramite app dedicata, con aggiornamenti costanti per migliorare sempre l’esperienza.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="patent" class="zoom-section patent-section" tabindex="0" aria-labelledby="patent-title">
+      <h2 id="patent-title">Idea Registrata &amp; Brevettata</h2>
+      <p>ETERNA EXPRESS è una soluzione esclusiva e innovativa, protetta da brevetto ufficiale presso <strong>UIBM</strong> (Ufficio Italiano Brevetti e Marchi). Questo garantisce protezione legale, esclusività sul mercato e un vantaggio competitivo unico.</p>
+      <div class="badge" aria-label="Brevetto registrato">✅ Brevettato UIBM</div>
+    </section>
+
+    <section id="revenue" class="zoom-section" tabindex="0" aria-labelledby="revenue-title">
+      <h2 id="revenue-title">Opportunità di Ricavi e Modello di Business</h2>
+      <ul>
+        <li>Vendita diretta ai consumatori finali con margini competitivi e crescita prevista.</li>
+        <li>Partnership strategiche con istituti finanziari, banche e compagnie assicurative per ampliare la distribuzione e i servizi integrati.</li>
+        <li>Servizi premium a sottoscrizione, come monitoraggio avanzato, assicurazioni e assistenza personalizzata.</li>
+        <li>Licenze software per aggiornamenti, nuove funzionalità e supporto continuo.</li>
+      </ul>
+    </section>
+
+    <section id="why-invest" class="zoom-section" tabindex="0" aria-labelledby="why-invest-title">
+      <h2 id="why-invest-title">Perché Investire in ETERNA EXPRESS?</h2>
+      <p>La tecnologia GPS integrata in una SmartCard rappresenta un cambiamento radicale nel modo in cui gli utenti gestiscono la propria sicurezza e mobilità. ETERNA EXPRESS offre:</p>
+      <ul>
+        <li><strong>Innovazione tecnologica unica:</strong> l’integrazione GPS direttamente nella carta è un brevetto che ci pone come pionieri nel mercato.</li>
+        <li><strong>Risposta a una crescente domanda di sicurezza e tracciamento:</strong> con l’aumento dei furti e delle frodi, la carta garantisce una protezione senza precedenti.</li>
+        <li><strong>Impatto ambientale ridotto:</strong> la carta sostituisce dispositivi più ingombranti e consuma meno energia.</li>
+        <li><strong>Espansione di mercato garantita:</strong> dall’Europa agli USA, la richiesta di soluzioni smart per pagamenti e sicurezza è in costante crescita.</li>
+        <li><strong>Team esperto e dedicato:</strong> guidato da Vincent & Federico, con solide competenze nel settore fintech e tech startup.</li>
+      </ul>
+      <p>Investire in ETERNA EXPRESS significa credere in un futuro dove tecnologia, sicurezza e design si fondono per migliorare la vita quotidiana di milioni di persone. Ti invitiamo a far parte di questa rivoluzione.</p>
+    </section>
+
+    <section id="invest" tabindex="0" aria-labelledby="invest-title" class="invest-section">
+      <h2 id="invest-title">Facci Una Domanda</h2>
+      <form id="invest-form" novalidate aria-describedby="invest-status">
+        <label for="invest-name">Nome Completo</label>
+        <input type="text" id="invest-name" name="name" placeholder="Mario Rossi" required aria-required="true" />
+        <label for="invest-email">Email</label>
+        <input type="email" id="invest-email" name="email" placeholder="esempio@mail.com" required aria-required="true" />
+        <label for="invest-message">Messaggio</label>
+        <textarea id="invest-message" name="message" placeholder="Scrivi qui il tuo interesse..." required aria-required="true"></textarea>
+        <button type="submit" aria-label="Invia richiesta di investimento">Invia Richiesta</button>
+        <div id="invest-status" role="alert" aria-live="assertive"></div>
+      </form>
+    </section>
+
+
+    <!-- Modale BASE -->
+<div id="modal-base" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-base')" role="button" tabindex="0" aria-label="Chiudi">&times;</span>
+    <h2>Piano Base</h2>
+    <img src="carta.png" alt="Carta Base Ingrandita" style="width: 300px; margin: 20px 0;">
+    <p>Il piano BASE offre funzionalità essenziali per iniziare con la nostra carta intelligente GPS.</p>
+  </div>
+</div>
+
+<!-- Modale PLATINO -->
+<div id="modal-platino" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-platino')" role="button" tabindex="0" aria-label="Chiudi">&times;</span>
+    <h2>Piano Platino</h2>
+    <img src="carta3.png" alt="Carta Platino Ingrandita" style="width: 300px; margin: 20px 0;">
+    <p>Il piano PLATINO aggiunge tracciamento avanzato e accesso prioritario all'assistenza clienti.</p>
+  </div>
+</div>
+
+<!-- Modale ORO -->
+<div id="modal-oro" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-oro')" role="button" tabindex="0" aria-label="Chiudi">&times;</span>
+    <h2>Piano Oro</h2>
+    <img src="carta4.png" alt="Carta Oro Ingrandita" style="width: 300px; margin: 20px 0;">
+    <p>Il piano ORO include tutti i servizi premium, protezione completa e supporto personale dedicato.</p>
+  </div>
+</div>
+
+<script src="login-script.js"></script>
+<script src="login-page.js"></script>
+<script src="script.js"></script>
+
+<script>
+  const utente = localStorage.getItem('loggedUser');
+  if (utente) {
+    document.getElementById('utente-email').textContent = utente;
+  }
+
+  document.getElementById('logout-btn').addEventListener('click', () => {
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('loggedUser');
+    window.location.href = 'login.html';
+  });
+</script>
+
+</body>
+
+</html>
