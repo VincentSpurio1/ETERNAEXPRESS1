@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: radial-gradient(circle at center, #0a0a0a 0%, #121212 70%, #000000 100%);
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "ETERNA EXPRESS";
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 600;
+  font-size: 2.4rem;
+  color: #444;
+  letter-spacing: 0.15em;
+  font-family: 'Montserrat', sans-serif;
+  user-select: none;
+  pointer-events: auto;
+  z-index: 10;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+  cursor: pointer;
+  transition: color 0.3s ease, letter-spacing 0.3s ease, text-shadow 0.3s ease;
+  text-shadow:
+    0 0 4px #d4af3777,
+    0 0 8px #d4af3755,
+    0 0 12px #d4af3733;
+}
+
+body::before:hover {
+  color: #d4af37;
+  letter-spacing: 0.2em;
+  text-shadow:
+    0 0 8px #d4af37cc,
+    0 0 16px #d4af37bb,
+    0 0 24px #d4af37aa;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.login-register-container {
+  background: #111;
+  border-radius: 20px;
+  padding: 48px 56px;
+  width: 400px;
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.8),
+    inset 0 0 18px #222;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+.login-register-container:hover {
+  box-shadow:
+    0 12px 36px rgba(0, 0, 0, 0.9),
+    inset 0 0 24px #333;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.tabs button {
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #777;
+  padding: 14px 0;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.tabs button.active {
+  color: #d4af37;
+  border-bottom: 2px solid #d4af37;
+}
+
+.tabs button:hover:not(.active),
+.tabs button:focus:not(.active) {
+  color: #d4af37aa;
+  outline: none;
+}
+
+section[role="tabpanel"] {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+
+input[type="email"],
+input[type="password"] {
+  background-color: #1a1a1a;
+  border: 1.5px solid #333;
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-size: 1rem;
+  color: #ddd;
+  font-family: 'Montserrat', sans-serif;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+input::placeholder {
+  color: #666;
+}
+
+input:focus {
+  outline: none;
+  border-color: #d4af37;
+  box-shadow: 0 0 12px #d4af37aa;
+  background-color: #111;
+}
+
+.error {
+  font-size: 0.85rem;
+  color: #ff5a5a;
+  min-height: 18px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+button[type="submit"] {
+  background-color: #d4af37;
+  border: none;
+  border-radius: 14px;
+  padding: 16px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+  background-color: #c19925;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+  outline: none;
+}
+
+[role="alert"] {
+  margin-top: 6px;
+  font-weight: 600;
+  min-height: 22px;
+  font-size: 0.95rem;
+  color: #d4af37;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.login-register-container::after {
+  content: "";
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  height: 1.5px;
+  background: #444;
+  bottom: 20px;
+  border-radius: 1px;
+  opacity: 0.3;
+}
+
+/* Responsive */
+@media (max-width: 440px) {
+  .login-register-container {
+    width: 90vw;
+    padding: 36px 28px;
+  }
+
+  body::before {
+    font-size: 1.4rem;
+    top: 20px;
+  }
+}
+
+
+.login-container {
+  position: relative;
+  background-color: #121212; /* colore di base scuro */
+  border-radius: 20px;
+  padding: 50px 56px 48px 56px;
+  width: 400px;
+  box-shadow:
+    0 8px 24px rgba(170, 170, 170, 0.15),
+    inset 0 0 12px #66666644;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  overflow: hidden; /* evita scroll per il background */
+}
+
+/* Sfondo logo semi-trasparente */
+.login-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3000px;  /* dimensione logo, modificala */
+  height: 500px;
+  background: url('logo1.png') no-repeat center center / contain;
+  opacity: 0.07; /* trasparenza molto leggera */
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* per non interferire con click */
+  z-index: 0;
+}
+
+/* Assicurati che il contenuto stia sopra */
+.login-container > * {
+  position: relative;
+  z-index: 1;
+}
